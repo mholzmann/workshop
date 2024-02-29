@@ -138,7 +138,7 @@ function draw() {
 
    - Verändere dafür den RGB-Code von `background()`.
 
-   - Den RGB-Code von Hellblau kannst du mit einem [Color Picker](https://g.co/kgs/GN5Bi2) herausfinden.
+   - Den RGB-Code von Hellblau kannst du mit einem [Colour Picker](https://g.co/kgs/GN5Bi2) herausfinden.
 
 <details>
 <summary>Lösung</summary>
@@ -196,11 +196,11 @@ function draw(){
    - Höhe: 400 Pixel
 3. Färbe in `draw()` den Hintergrund orange ein.
 
-   - Den RGB-Code kannst du mit einem [Color Picker](https://g.co/kgs/vGP3eQ) herausfinden.
+   - Den RGB-Code kannst du mit einem [Colour Picker](https://g.co/kgs/vGP3eQ) herausfinden.
    - RGB ist eine Abkürzung für Rot-Grün-Blau.
 4. Zeichne in `draw()` einen Kreis in die Mitte der Zeichenfläche.
 
-   -   Verwende: `ellipse(300, 300, 20, 20);`
+   -   Verwende: `ellipse(300, 200, 20, 20);`
 5. Vergrößere den Durchmesser des Kreises auf 80 Pixel.
 6. Setze in `draw()` die Füllfarbe auf grau.
 
@@ -320,8 +320,8 @@ function draw() {
 2. Kopiere folgendes Programm in den Editor.
 
    ```js
-   let x = 300;
-   let y = 0;
+   let ballX = 300;
+   let ballY = 0;
    
    function setup() {
      createCanvas(600, 400);
@@ -331,26 +331,25 @@ function draw() {
    function draw() {
      background(0, 0, 0);
    
-     if (y > height) {
-       
-     }
+     // Verzweigung in der nächsten Zeile einfügen
+     
    }
    ```
+   
+3. Zeichne in `draw()` mithilfe des folgenden Befehls einen Ball (=Kreis) an der Position `ballX` und `ballY`.
 
-3. Zeichne in `draw()` mithilfe des folgenden Befehls einen Ball (=Kreis) an der Position `x` und `y`.
+   - Verwende: `circle(ballX, ballY, 20);`
 
-   - Verwende: `circle(x, y, 20);`
+4. Erhöhe in `draw()` den Wert der y-Koordinate um 1. Der Ball sollte jetzt nach unten fallen.
 
-4. Erhöhe in `draw()` den Wert der `y`-Koordinate um 1. Der Ball sollte jetzt nach unten fallen.
-
-   - Verwende: ` y = y + 1;`
+   - Verwende: `ballY = ballY + 1;`
 
 5. Erhöhe die Geschwindigkeit des Balls, so dass er fünfmal so schnell nach unten fällt.
 
 6. Füge in `draw()` die folgende Verzweigung ein.
 
    ```js
-   if (y > height) {
+   if (ballY > height) {
    
    }
    ```
@@ -358,13 +357,13 @@ function draw() {
    - Die Variable `height` enthält die Höhe des Spielfelds.
    - So kannst du also prüfen, ob der Ball unten angekommen ist.
 
-7. Setze, wenn der Ball am Boden auftrifft, die `y`-Koordinate auf `0` zurück.
+7. Setze, wenn der Ball am Boden auftrifft, die y-Koordinate auf 0 zurück.
 
-   - Dadurch sollte ein neuer Ball von oben fallen.
+   - Dadurch sollte ein "neuer" Ball von oben fallen.
 
 8. Füge in der Verzweigung eine weitere Anweisung hinzu. 
 
-   - Verwende: `x = random(600);`
+   - Verwende: `ballX = random(600);`
    - Welche Auswirkung hat diese Änderung? 
 
 
@@ -372,8 +371,8 @@ function draw() {
 <summary>Lösung</summary>
 
 ```js
-let x = 300;
-let y = 0;
+let ballX = 300;
+let ballY = 0;
 
 function setup() {
   createCanvas(600, 400);
@@ -383,12 +382,12 @@ function setup() {
 function draw() {
   background(0, 0, 0);
   
-  y = y + 5;
-  circle(x, y, 20);
+  ballY = ballY + 5;
+  circle(ballX, ballY, 20);
 
-  if (y > height) {
-    y = 0;  
-    x = random(600);
+  if (ballY > height) {
+	ballY = 0;
+    ballX = random(600);
   }
 }
 ```
@@ -406,8 +405,8 @@ function draw() {
 2. Kopiere folgendes Programm in den Editor.
 
    ```js
-   let x = 300;
-   let y = 0;
+   let ballX = 300;
+   let ballY = 0;
    
    function setup() {
      createCanvas(600, 400);
@@ -418,12 +417,12 @@ function draw() {
    function draw() {
      background(0, 0, 0);
      
-     y = y + 5;
-     circle(x, y, 20);
+     ballY = ballY + 5;
+     circle(ballX, ballY, 20);
    
-     if (y > height) {
-       y = 0;  
-       x = random(600);
+     if (ballY > height) {
+   	ballY = 0;
+       ballX = random(600);
      }
    }
    ```
@@ -472,9 +471,210 @@ function draw() {
 
 
 
-## Super Challenge: Jump Ball
+## Challenge 6: Count Catches
 
-![img](pics/jump-ball.gif)
+![img](pics/count-catches.gif)
+
+1. Öffne den Web Editor auf https://editor.p5js.org/.
+
+2. Kopiere folgendes Programm in den Editor.
+
+   ```js
+   let ballX = 300;
+   let ballY = 0;
+   let counter = 10;
+   
+   function setup() {
+     createCanvas(600, 400);
+     fill(255, 255, 255);
+     textSize(30);
+     rectMode(CENTER);
+   }
+   
+   function draw() {
+     background(0, 0, 0);
+     text(counter, 60, 40);
+     
+     ballY = ballY + 5;
+     circle(ballX, ballY, 20);
+   
+     if (ballY > height) {
+       // Verzweigung in der nächsten Zeile einfügen
+   
+       ballY = 0;  
+       ballX = random(600);
+     }
+     
+     rect(mouseX, height - 10, 40, 20);  
+   }
+   ```
+
+3. Ändere den Startwert der Variable `counter` von 10 auf 0.
+
+   - Mithilfe dieser Variable wollen wir später die gefangenen Bälle zählen.
+
+
+4. Zeige den Wert von `counter` links oben (statt rechts oben) an.
+
+5. Füge in `draw()` die folgende Verzweigung ein.
+
+   ```js
+   if (ballX > mouseX - 10 && ballX < mouseX + 10) {
+     
+   } 
+   ```
+
+   - Mithilfe dieser Verzweigung kannst du überprüfen, ob der Ball gefangen wurde.
+
+6. Erhöhe, falls der Ball gefangen wurde, den Wert der Variable `counter` um 1.
+
+<details>
+<summary>Lösung</summary>
+
+```js
+let ballX = 300;
+let ballY = 0;
+let counter = 0;
+
+function setup() {
+  createCanvas(600, 400);
+  fill(255, 255, 255);
+  textSize(30);
+  rectMode(CENTER);
+}
+
+function draw() {
+  background(0, 0, 0);
+  text(counter, 10, 40);
+  
+  ballY = ballY + 5;
+  circle(ballX, ballY, 20);
+
+  if (ballY > height) {
+    if (ballX > mouseX - 10 && ballX < mouseX + 10) {
+      counter = counter + 1;
+    } 
+    
+    ballY = 0;  
+    ballX = random(600);
+  }
+  
+  rect(mouseX, height - 10, 40, 20);  
+}
+```
+
+</details>
+
+
+## Challenge 7: Game Over
+
+![img](pics/game-over.gif)
+
+1. Öffne den Web Editor auf https://editor.p5js.org/.
+
+2. Kopiere folgendes Programm in den Editor.
+
+   ```js
+   let ballX = 300;
+   let ballY = 0;
+   let counter = 0;
+   let gameOver = false;
+   
+   function setup() {
+     createCanvas(600, 400);
+     fill(255, 255, 255);
+     textSize(30);
+     rectMode(CENTER);
+   }
+   
+   function draw() {
+     if (gameOver) {
+       // Gib den Text "GAME OVER" in der nächsten Zeile aus
+         
+       return;
+     }
+       
+     background(0, 0, 0);
+     text(counter, 10, 40);
+     
+     ballY = ballY + 5;
+     circle(ballX, ballY, 20);
+   
+     if (ballY > height) {
+       if (ballX > mouseX - 10 && ballX < mouseX + 10) {
+         counter = counter + 1;
+       } else {
+         // Verändere die gameOver-Variable in der nächsten Zeile
+         
+       }
+       
+       ballY = 0;  
+       ballX = random(600);
+     }
+     
+     rect(mouseX, height - 10, 40, 20);  
+   }
+   ```
+
+3. Beende, wenn der Ball nicht gefangen wurde, das Spiel.
+
+   - Im Programm ist bereits ein `else`-Zweig vorhanden.
+   - Der Code im `else`-Zweig wird nur ausgeführt, verfehlt wurde.
+   - Setze also im `else`-Zweig, den Wert der Variable `gameOver` auf den Wert `true`.
+
+
+4. Gib, wenn das Spiel verloren wurde, den Text " GAME OVER" in der Mitte des Spielfelds aus.
+
+<details>
+<summary>Lösung</summary>
+
+```js
+let ballX = 300;
+let ballY = 0;
+let counter = 0;
+let gameOver = false;
+
+function setup() {
+  createCanvas(600, 400);
+  fill(255, 255, 255);
+  textSize(30);
+  rectMode(CENTER);
+}
+
+function draw() {
+  if (gameOver) {
+    text("GAME OVER", 200, height/2);
+    return;
+  }
+  
+  background(0, 0, 0);
+  text(counter, 10, 40);
+  
+  ballY = ballY + 5;
+  circle(ballX, ballY, 20);
+
+  if (ballY > height) {
+    if (ballX > mouseX - 10 && ballX < mouseX + 10) {
+      counter = counter + 1;
+    } else {
+      gameOver = true;
+    }
+    
+    ballY = 0;  
+    ballX = random(600);
+  }
+  
+  rect(mouseX, height - 10, 40, 20);  
+}
+```
+
+</details>
+
+
+
+## Super Challenge 1: Jumping Ball
+
+![img](pics/jumping-ball.gif)
 
 1. Öffne den Web Editor auf https://editor.p5js.org/.
 
@@ -503,3 +703,97 @@ function draw() {
    ```
 
 3. Verändere das Programm, so dass der Ball zwischen Boden und Decke hin und her springt.
+
+
+
+## Super Challenge 2: Crazy Jumping Ball
+
+![img](pics/crazy-jumping-ball.gif)
+
+1. Öffne den Web Editor auf https://editor.p5js.org/.
+
+2. Kopiere folgendes Programm in den Editor.
+
+   ```js
+   let x = 0;
+   let y = 0;
+   let speedX = 3;
+   let speedY = 5;
+   
+   function setup() {
+     createCanvas(600, 400);
+     fill(255, 255, 255);
+   }
+   
+   function draw() {
+     background(0, 0, 0);
+     
+     y = y + speedY;
+     circle(x, y, 20);
+   
+     if (y > height) {
+       speedY = -5;
+     }
+     
+     if (y < 0) {
+       speedY = 5;
+     }
+   }
+   
+   ```
+
+3. Verändere das Programm, so dass sich der Ball schräg nach rechts bewegt.
+
+4. Verändere das Programm, so dass der Ball auch vom linken und rechten Rand zurückspringt.
+
+
+
+## Super Challenge 3: Red Jumping Ball
+
+![img](pics/crazy-jumping-ball.gif)
+
+1. Öffne den Web Editor auf https://editor.p5js.org/.
+
+2. Kopiere folgendes Programm in den Editor.
+
+   ```js
+   let x = 0;
+   let y = 0;
+   let speedX = 2;
+   let speedY = 3;
+   let radius = 50;
+   
+   function setup() {
+     createCanvas(600, 400);
+     fill(255, 255, 255);
+   }
+   
+   function draw() {
+     background(0, 0, 0);
+     
+     let squareDistance = (mouseX-x)*(mouseX-x) + (mouseY-y)*(mouseY-y);
+     
+     if (squareDistance < radius*radius) {
+       fill(255, 0, 0);
+     } else {
+       fill(255, 255, 255);
+     }
+     
+     y = y + speedY;
+     x = x + speedX;
+     circle(x, y, radius);
+   
+     if (y > height || y < 0) {
+       speedY = speedY * (-1);
+     }
+     
+     if (x > width || x < 0) {
+       speedX = speedX * (-1);
+     }
+   }
+   
+   ```
+
+3. Verändere das Programm, so dass sich der Ball schräg nach rechts bewegt.
+
+4. Verändere das Programm, so dass der Ball auch vom linken und rechten Rand zurückspringt.
