@@ -1,10 +1,14 @@
-# Workshop - MS Ried
+
+
+![img](pics/logo.jpg)
+
+# JavaScript Workshop
 
 Bei diesem Workshop verwenden wir die ***JavaScript* Bibliothek *p5.js***:
 
 - ***JavaScript*** ist eine Programmiersprache.
   - Mit Programmiersprachen kann man Apps, Websites, Spiele, ... entwickeln.
-  - *JavaScript* ist im Internet auf fast jeder Website im Einsatz!
+  - *JavaScript* ist im Internet auf (fast) jeder Website im Einsatz!
   
 - Eine **Bibliothek** ist wie ein Werkzeugkasten für Programmierer:innen
   - ***p5.js*** enthält z. B. fertige Zeichenfunktionen für Rechtecke, Kreise, ...
@@ -25,7 +29,7 @@ Ein *p5.js* Programm besitzt **zwei wichtige Funktionen**:
 
 
 
-**Hier siehst du den Code eines *p5.js* Programms:**
+**Unten siehst du den Code eines *p5.js* Programms (das du [hier](https://editor.p5js.org/) ausprobieren kannst):**
 
 ```js
 // Anweisungen in setup() werden nur einmal (beim Programmstart) ausgeführt
@@ -213,7 +217,7 @@ function draw(){
 8. Verwende auch für die y-Koordinate des Kreises die Position des Mauszeigers.
 
    - Wie könnte die passende Variable heißen?
-9. Rufe `background()` in `setup()` statt in `draw()` auf.
+9. Rufe `background()` am Ende von `setup()` statt in `draw()` auf.
 
    - Wie wirkt sich diese Änderung aus?
 
@@ -493,7 +497,7 @@ function draw() {
    
    function draw() {
      background(0, 0, 0);
-     text(counter, 60, 40);
+     text(counter, 570, 40);
      
      ballY = ballY + 5;
      circle(ballX, ballY, 20);
@@ -516,7 +520,7 @@ function draw() {
 
 4. Zeige den Wert von `counter` links oben (statt rechts oben) an.
 
-5. Füge in `draw()` die folgende Verzweigung ein.
+5. Füge in `draw()` an der vorgesehenen Stelle die folgende Verzweigung ein.
 
    ```js
    if (ballX > mouseX - 10 && ballX < mouseX + 10) {
@@ -619,11 +623,11 @@ function draw() {
 3. Beende, wenn der Ball nicht gefangen wurde, das Spiel.
 
    - Im Programm ist bereits ein `else`-Zweig vorhanden.
-   - Der Code im `else`-Zweig wird nur ausgeführt, verfehlt wurde.
+   - Der Code im `else`-Zweig wird nur ausgeführt, wenn der Ball verfehlt wurde.
    - Setze also im `else`-Zweig, den Wert der Variable `gameOver` auf den Wert `true`.
 
 
-4. Gib, wenn das Spiel verloren wurde, den Text " GAME OVER" in der Mitte des Spielfelds aus.
+4. Gib, wenn das Spiel verloren wurde, den Text "GAME OVER" in der Mitte des Spielfelds aus.
 
 <details>
 <summary>Lösung</summary>
@@ -739,9 +743,8 @@ function draw() {
        speedY = 5;
      }
    }
-   
    ```
-
+   
 3. Verändere das Programm, so dass sich der Ball schräg nach rechts bewegt.
 
 4. Verändere das Programm, so dass der Ball auch vom linken und rechten Rand zurückspringt.
@@ -750,7 +753,7 @@ function draw() {
 
 ## Super Challenge 3: Red Jumping Ball
 
-![img](pics/crazy-jumping-ball.gif)
+![img](pics/red-jumping-ball.gif)
 
 1. Öffne den Web Editor auf https://editor.p5js.org/.
 
@@ -773,11 +776,7 @@ function draw() {
      
      let squareDistance = (mouseX-x)*(mouseX-x) + (mouseY-y)*(mouseY-y);
      
-     if (squareDistance < radius*radius) {
-       fill(255, 0, 0);
-     } else {
-       fill(255, 255, 255);
-     }
+     // Prüfe hier, ob der Mauszeiger im Kreis liegt
      
      y = y + speedY;
      x = x + speedX;
@@ -791,9 +790,6 @@ function draw() {
        speedX = speedX * (-1);
      }
    }
-   
    ```
 
-3. Verändere das Programm, so dass sich der Ball schräg nach rechts bewegt.
-
-4. Verändere das Programm, so dass der Ball auch vom linken und rechten Rand zurückspringt.
+3. Verändere das Programm, so dass der Ball rot ist, wenn ihn der Mauszeiger berührt.
