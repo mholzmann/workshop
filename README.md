@@ -48,7 +48,7 @@ function draw() {
     fill(255, 255, 255);      // wird die Füllfarbe auf weiß gesetzt
   }
     
-  ellipse(mouseX, mouseY, 50, 50);   // zeichnet einen Kreis an die Position des Mauszeigers
+  circle(mouseX, mouseY, 50);   // zeichnet einen Kreis an die Position des Mauszeigers
 }
 ```
 
@@ -99,7 +99,7 @@ function draw() {
        
      // Kopf
      fill(255, 255, 255);
-     ellipse(300, 140, 120, 120);
+     circle(300, 140, 120);
        
      // Linkes Auge 
      fill(255, 255, 255);
@@ -167,7 +167,7 @@ function draw(){
     
   // Kopf
   fill(255, 255, 0);
-  ellipse(300, 140, 120, 120);
+  circle(300, 140, 120);
     
   // Linkes Auge
   fill(255, 0, 0);
@@ -204,12 +204,12 @@ function draw(){
    - RGB ist eine Abkürzung für Rot-Grün-Blau.
 4. Zeichne in `draw()` einen Kreis in die Mitte der Zeichenfläche.
 
-   -   Verwende: `ellipse(300, 200, 20, 20);`
+   -   Verwende: `circle(300, 200, 20);`
 5. Vergrößere den Durchmesser des Kreises auf 80 Pixel.
 6. Setze in `draw()` die Füllfarbe auf grau.
 
    - Rufe dafür `fill()` mit dem passenden RGB-Code auf.
-   - Tipp: Der Aufruf von `fill()` muss vor dem Aufruf von `ellipse()` stattfinden!
+   - Tipp: Der Aufruf von `fill()` muss vor dem Aufruf von `circle()` stattfinden!
 7. Verwende als x-Koordinate des Kreises die Position des Mauszeigers.
 
    - Auf die x-Koordinate des Mauszeigers kannst du über die Variable `mouseX` zugreifen.
@@ -233,7 +233,7 @@ function setup() {
 
 function draw() {
   fill(170, 173, 170);
-  ellipse(mouseX, mouseY, 80, 80);
+  circle(mouseX, mouseY, 80);
 }
 ```
 
@@ -261,7 +261,7 @@ function draw() {
      
        
      line(300, 0, 300, 100);
-     ellipse(mouseX, mouseY, 80, 80);
+     circle(mouseX, mouseY, 80);
    }
    ```
 
@@ -307,7 +307,7 @@ function draw() {
   } 
   
   line(300, 0, 300, 400);
-  ellipse(mouseX, mouseY, 80, 80);
+  circle(mouseX, mouseY, 80);
 }
 ```
 
