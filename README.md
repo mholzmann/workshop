@@ -7,12 +7,16 @@
 Bei diesem Workshop verwenden wir die ***JavaScript* Bibliothek *p5.js***:
 
 - ***JavaScript*** ist eine Programmiersprache.
+
   - Mit Programmiersprachen kann man Apps, Websites, Spiele, ... entwickeln.
   - *JavaScript* ist im Internet auf (fast) jeder Website im Einsatz!
-  
+
 - Eine **Bibliothek** ist wie ein Werkzeugkasten für Programmierer:innen
   - ***p5.js*** enthält z. B. fertige Zeichenfunktionen für Rechtecke, Kreise, ...
-  - Nähere Infos für das Zeichen am Computer findest du [hier](https://p5js.org/learn/coordinate-system-and-shapes.html).
+
+- Das **Koordinatensystem** eines Computers sieht etwas anders aus, als im Mathematik-Unterricht:
+
+  ![img](pics/coordinategrid.png)
 
 
 
